@@ -1,0 +1,39 @@
+{
+  "name": "form-association-polyfill",
+  "version": "1.0.0",
+  "description": "HTML5 form* attributes polyfill, to change form association and submission attributes",
+  "main": [
+    "dist/form-association-polyfill.js"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7.0"
+  },
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "html5",
+    "form",
+    "formaction"
+  ],
+  "authors": [
+    {
+      "name": "PaulZi",
+      "email": "pavel.zimakoff@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulzi/form-association-polyfill.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src",
+    "Gruntfile.js",
+    "package.json"
+  ]
+}
