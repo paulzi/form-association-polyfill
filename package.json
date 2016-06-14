@@ -1,6 +1,6 @@
 {
   "name": "form-association-polyfill",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HTML5 form* attributes polyfill, to change form association and submission attributes",
   "main": [
     "dist/form-association-polyfill.js"
@@ -26,7 +26,8 @@
     "url": "https://github.com/paulzi/form-association-polyfill.git"
   },
   "dependencies": {
-    "jquery": ">=1.7.0"
+    "jquery": ">=1.7.0",
+    "form-extra-events": ">=1.0.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",

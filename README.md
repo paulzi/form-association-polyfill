@@ -25,10 +25,20 @@ Or install manually.
 
 ## Usage
 
-Include library on page after jQuery:
+Include library on page after jQuery. Select standalone or separate method:
+
+### standalone (build-in dependencies)
 
 ```html
 <script src="/bower_components/jquery/dist/jquery.min.js">
+<script src="/bower_components/form-association-polyfill/dist/form-association-polyfill.all.min.js">
+```
+
+### separate (external dependencies)
+
+```html
+<script src="/bower_components/jquery/dist/jquery.min.js">
+<script src="/bower_components/form-extra-events/dist/form-extra-events.min.js">
 <script src="/bower_components/form-association-polyfill/dist/form-association-polyfill.min.js">
 ```
 
@@ -46,6 +56,7 @@ Profit!
 ## Requirements
 
 - jQuery 1.7+
+- [form-extra-events](https://github.com/paulzi/form-extra-events/)
 
 ## Browser support
 

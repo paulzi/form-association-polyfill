@@ -17,8 +17,6 @@ var submissionSubmit = function () {
         });
         $form.prop(submissionData, attrOld);
         $form.attr(attrNew);
-
-        setTimeout(function () { submissionAfterSubmit.call($form[0]); }, 10);
     }
 };
 
@@ -30,5 +28,6 @@ var submissionAfterSubmit = function () {
 };
 
 if (!submissionSupport()) {
-    $(document).on('submit', 'form', submissionSubmit);
+    $(document).on('submitbefore', 'form', submissionSubmit);
+    $(document).on('submitstart',  'form', submissionAfterSubmit);
 }

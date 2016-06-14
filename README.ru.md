@@ -25,10 +25,20 @@ bower install form-association-polyfill
 
 ## Использование
 
-Подключите библиотеку на страницу после jQuery:
+Подключите библиотеку на страницу после jQuery. Выберите интегрированный или раздельный вариант подключения библиотеки:
+
+### интегрированный (со встроенными зависимостями)
 
 ```html
 <script src="/bower_components/jquery/dist/jquery.min.js">
+<script src="/bower_components/form-association-polyfill/dist/form-association-polyfill.all.min.js">
+```
+
+### раздельный (внешние зависимости)
+
+```html
+<script src="/bower_components/jquery/dist/jquery.min.js">
+<script src="/bower_components/form-extra-events/dist/form-extra-events.min.js">
 <script src="/bower_components/form-association-polyfill/dist/form-association-polyfill.min.js">
 ```
 
@@ -46,6 +56,7 @@ bower install form-association-polyfill
 ## Требования
 
 - jQuery 1.7+
+- [form-extra-events](https://github.com/paulzi/form-extra-events/)
 
 ## Поддержка браузерами
 

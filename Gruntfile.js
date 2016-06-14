@@ -26,6 +26,13 @@ module.exports = function(grunt) {
                 },
                 src:  'dist/<%= pkg.name %>.js',
                 dest: 'dist/<%= pkg.name %>.js'
+            },
+            all: {
+                src: [
+                    'node_modules/form-extra-events/dist/form-extra-events.js',
+                    'dist/<%= pkg.name %>.js'
+                ],
+                dest: 'dist/<%= pkg.name %>.all.js'
             }
         },
         umd: {
@@ -47,6 +54,11 @@ module.exports = function(grunt) {
                 files: {
                     'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
                 }
+            },
+            all: {
+                files: {
+                    'dist/<%= pkg.name %>.all.min.js': ['<%= concat.all.dest %>']
+                }
             }
         },
         jshint: {
@@ -62,7 +74,7 @@ module.exports = function(grunt) {
         },
         watch: {
             files: ['src/**/*'],
-            tasks: ['jshint', 'concat:dist', 'umd', 'concat:banner', 'uglify']
+            tasks: ['concat:dist', 'umd', 'concat:banner', 'concat:all']
         }
     });
 
@@ -72,6 +84,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['jshint', 'concat:dist', 'umd', 'concat:banner', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'concat:dist', 'umd', 'concat:banner', 'concat:all', 'uglify:dist', 'uglify:all']);
 
 };

@@ -66,8 +66,6 @@ var associationSubmit = function () {
     }
 
     form[pluginName] = [removed, $added];
-
-    setTimeout(function () { associationAfterSubmit.call(form); }, 10);
 };
 
 var associationAfterSubmit = function () {
@@ -93,5 +91,6 @@ var associationAfterSubmit = function () {
 
 if (!associationSupport()) {
     $(document).on('click', submitSelector, associationClickOnSubmit);
-    $(document).on('submit', 'form', associationSubmit);
+    $(document).on('submitbefore', 'form', associationSubmit);
+    $(document).on('submitstart',  'form', associationAfterSubmit);
 }
