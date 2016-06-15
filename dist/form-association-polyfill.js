@@ -2,7 +2,7 @@
  * Form association polyfill
  * @see https://github.com/paulzi/form-association-polyfill
  * @license MIT (https://github.com/paulzi/form-association-polyfill/blob/master/LICENSE)
- * @version 1.0.1
+ * @version 1.0.2
  */
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -137,6 +137,14 @@ var submissionSupport = function () {
 var submissionSubmit = function () {
     var $form = $(this),
         $btn  = $(document.activeElement).filter(submitSelector);
+    if (!$btn.length) {
+        $.each(this.elements, function (i, input) {
+            input = $(input).filter(submitSelector);
+            if (!$btn.length && input.length) {
+                $btn = input;
+            }
+        });
+    }
     if ($btn.length) {
         var attrNew = {}, attrOld = {};
         $.each(attrList, function (i, attr) {
