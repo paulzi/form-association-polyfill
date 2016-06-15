@@ -9,6 +9,14 @@ var submissionSupport = function () {
 var submissionSubmit = function () {
     var $form = $(this),
         $btn  = $(document.activeElement).filter(submitSelector);
+    if (!$btn.length) {
+        $.each(this.elements, function (i, input) {
+            input = $(input).filter(submitSelector);
+            if (!$btn.length && input.length) {
+                $btn = input;
+            }
+        });
+    }
     if ($btn.length) {
         var attrNew = {}, attrOld = {};
         $.each(attrList, function (i, attr) {
