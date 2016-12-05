@@ -2,9 +2,7 @@
   "name": "form-association-polyfill",
   "version": "1.0.2",
   "description": "HTML5 form* attributes polyfill, to change form association and submission attributes",
-  "main": [
-    "dist/form-association-polyfill.js"
-  ],
+  "main": "dist/form-association-polyfill.js",
   "moduleType": [
     "amd",
     "globals"
