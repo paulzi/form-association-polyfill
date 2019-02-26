@@ -1,71 +1,76 @@
-# Form Association Polyfill
+# form-association-polyfill
 
 [![NPM version](http://img.shields.io/npm/v/form-association-polyfill.svg?style=flat)](https://www.npmjs.org/package/form-association-polyfill)
-![Bower version](http://img.shields.io/bower/v/form-association-polyfill.svg?style=flat)
+[![Build Status](https://img.shields.io/travis/paulzi/form-association-polyfill/master.svg)](https://travis-ci.org/paulzi/form-association-polyfill)
+[![Downloads](https://img.shields.io/npm/dt/form-association-polyfill.svg)](https://www.npmjs.org/package/form-association-polyfill)
+![License](https://img.shields.io/npm/l/form-association-polyfill.svg)
 
-Библиотека обеспечивает поддержку HTML5 form* атрибутов для старых браузеров, что позволяет менять принадлежность к формам input-элементов и менять параметры отправки формы.
-
-Демо: http://paulzi.ru/form-association-polyfill/
+Полифилл для [атрибута form](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#form)
 
 [English readme](https://github.com/paulzi/form-association-polyfill/)
 
 ## Установка
 
-Установка через NPM
 ```sh
 npm install form-association-polyfill
 ```
 
-Установка через Bower
-```sh
-bower install form-association-polyfill
-```
-
-Или установите вручную.
-
 ## Использование
 
-Подключите библиотеку на страницу после jQuery. Выберите интегрированный или раздельный вариант подключения библиотеки:
+Просто проимпортируйте библиотеку:
 
-### интегрированный (со встроенными зависимостями)
-
-```html
-<script src="/bower_components/jquery/dist/jquery.min.js">
-<script src="/bower_components/form-association-polyfill/dist/form-association-polyfill.all.min.js">
+```javascript
+import 'form-association-polyfill';
 ```
 
-### раздельный (внешние зависимости)
+## Документация
 
-```html
-<script src="/bower_components/jquery/dist/jquery.min.js">
-<script src="/bower_components/form-extra-events/dist/form-extra-events.min.js">
-<script src="/bower_components/form-association-polyfill/dist/form-association-polyfill.min.js">
+### Варианты импорта
+
+Есть несколько входных точек для импорта библиотеки:
+
+- `import ExtraEvents from 'form-association-polyfill'` - аналогично `register-with-shims`;
+- `import ExtraEvents from 'form-association-polyfill/standard'` - простой импорт без полифилов для ie11, требуется регистрация;
+- `import ExtraEvents from 'form-association-polyfill/with-shims'` - импорт с прокладками для ie11, требуется регистрация;
+- `import ExtraEvents from 'form-association-polyfill/with-polyfills'` - импорт с полифилами для ie11, требуется регистрация;
+- `import ExtraEvents from 'form-association-polyfill/register'` - импорт без полифилов для ie11, авто-регистрация;
+- `import ExtraEvents from 'form-association-polyfill/register-with-shims'` - импорт с прокладками для ie11, авто-регистрация;
+- `import ExtraEvents from 'form-association-polyfill/register-with-polifills'` - импорт с полифилами для ie11, авто-регистрация.
+
+Отличия прокладок от полифилов можете прочитать в [polyshim](https://github.com/paulzi/polyshim/).
+
+При прямом подключении скрипта из папки `dist` в браузер, получить экземпляр FormPolyfill можно через `window.FormAssociationPolyfill.default`.
+
+### Регистрация и наименование событий
+
+При импорте пакета без регистрации, требуется зарегистрировать его:
+
+```javascript
+import ExtraEvents from 'form-association-polyfill/with-shims';
+
+ExtraEvents.register();
 ```
 
-Готово!
+### Методы 
 
-## Возможности
+- `register([settings])` - регистрирует библиотеку
+- `unregister()` - отменяет регистрацию библиотеки
+- `setShim([setClosest[, setEvent]])` - задаёт прокладки для некроссбраузерных методов
+    - `setClosest {Function|null}` - прокладка для `Element.prototype.closest`
+    - `setCustomEvent {Function|null}` - прокладка для `new Event`
 
-- обеспечивает поддержку `form` атрибута
-- обеспечивает возможность отпавки формы с помощью кнопок вне формы (это является частью поддержки `form` атрибута)
-- обеспечивает поддержку `formaction`, `formmethod`, `formenctype`, `formtarget` атрибутов
-- сохраняет оригинальный порядок отправки полей согласно DOM
-- поддерживает `input[type="file"]`
-- дополнительно обеспечивает фикс Safari `document.activeElement` для кнопок
+## Тестирование
 
-## Требования
+Для тестов необходимо установить [selenium-драйверы](https://seleniumhq.github.io/selenium/docs/api/javascript/index.html) для браузеров.
+Для запуска тестов используйте:
 
-- jQuery 1.7+
-- [form-extra-events](https://github.com/paulzi/form-extra-events/)
+```sh
+npm test
+```
 
 ## Поддержка браузерами
 
-Поддержка была протестирована в следующих браузерах:
+- Internet Explorer 11+
+- Другие современные браузеры
 
-- Internet Explorer 7+
-- Chrome 7+
-- Firefox 3+
-- Opera 15+
-- Safari 5+
-- Android Browser 2.2+
-- iOS Safari ?
+Для старых браузеров используйте [версию 1.x](https://github.com/paulzi/form-association-polyfill/tree/1.x).

@@ -4,18 +4,14 @@
 # windows thumbnail cache
 Thumbs.db
 
-# composer vendor dir
-/vendor
-
 # npm
 /node_modules
 
 # bower
 /bower_components
 
-# composer itself is not needed
-composer.phar
-composer.lock
+# composer vendor dir
+/vendor
 
 # Mac DS_Store Files
 .DS_Store
