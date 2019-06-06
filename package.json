@@ -1,6 +1,6 @@
 {
   "name": "form-association-polyfill",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "HTML5 form attribute polyfill",
   "main": "./register-with-shims.js",
   "authors": [
@@ -15,34 +15,27 @@
     "url": "https://github.com/paulzi/form-association-polyfill"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/register": "^7.0.0",
-    "babel-loader": "^8.0.5",
-    "body-parser": "^1.18.3",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "babel-loader": "^8.0.6",
+    "body-parser": "^1.19.0",
     "chai": "^4.2.0",
-    "eslint": "^4.19.1",
+    "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",
-    "express": "^4.16.4",
-    "mocha": "^5.2.0",
+    "express": "^4.17.1",
+    "mocha": "^6.1.4",
     "multer": "^1.4.1",
     "selenium-webdriver": "^4.0.0-alpha.1",
-    "start-server-and-test": "^1.7.11",
-    "uglifyjs-webpack-plugin": "^2.1.1",
-    "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3",
+    "start-server-and-test": "^1.9.1",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
     "webpack-merge": "^4.2.1"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "last 4 Chrome versions",
-    "last 4 Firefox versions",
-    "ie >= 11",
-    "not ie < 11",
-    "Safari >= 9",
-    "Android >= 4.4",
-    "iOS >= 7.1"
+    "defaults",
+    "ie >= 11"
   ],
   "scripts": {
     "build:dev": "webpack --config webpack/dev.config.js",
@@ -52,7 +45,7 @@
     "test": "start-server-and-test start 3003 test:selenium"
   },
   "dependencies": {
-    "form-extra-events": "^2.0.1",
-    "polyshim": "^0.1.1"
+    "form-extra-events": "^2.0.2",
+    "polyshim": "^0.1.2"
   }
 }
