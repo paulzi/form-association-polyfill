@@ -17,7 +17,7 @@ test.suite(env => {
         let driver, cap;
 
         before(async function() {
-            let chromeOptions = new chrome.Options().headless();
+            let chromeOptions = new chrome.Options().headless().addArguments('no-sandbox');
             let firefoxOptions = new firefox.Options().headless();
             driver = await env.builder()
                 .setChromeOptions(chromeOptions)
