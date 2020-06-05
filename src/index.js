@@ -110,7 +110,10 @@ function getFirstSubmit(nodes) {
  */
 function keyPressHandler(e) {
     let target = e.target;
-    if (!e.defaultPrevented && (e.key === 'Enter' || (e.keyCode || e.which || e.charCode) === 13)) {
+    if (!e.defaultPrevented
+        && ['INPUT', 'BUTTON'].indexOf(target.nodeName) !== -1
+        && (e.key === 'Enter' || (e.keyCode || e.which || e.charCode) === 13)
+    ) {
         let formId = target.getAttribute('form');
         let form = formId ? doc.querySelector('form#' + formId) : target.form;
         if (form && form.id) {
