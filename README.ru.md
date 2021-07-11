@@ -5,7 +5,7 @@
 
 Библиотека обеспечивает поддержку HTML5 form* атрибутов для старых браузеров, что позволяет менять принадлежность к формам input-элементов и менять параметры отправки формы.
 
-Демо: http://paulzi.ru/form-association-polyfill/
+Демо: https://paulzi.ru/misc/github/form-association-polyfill-v1/
 
 [English readme](https://github.com/paulzi/form-association-polyfill/)
 

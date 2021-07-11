@@ -5,7 +5,7 @@
 
 HTML5 form* attributes polyfill, to change form association and submission attributes
 
-Demo: http://paulzi.ru/form-association-polyfill/
+Demo: https://paulzi.ru/misc/github/form-association-polyfill-v1/
 
 [Russian readme](https://github.com/paulzi/form-association-polyfill/blob/master/README.ru.md)
 
